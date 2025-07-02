@@ -3,12 +3,15 @@ import { addEmployee } from './fixture/addEmployee'
 import { validateEmployees } from './fixture/validateEMployee'
 import { deleteEmployees } from './fixture/cleanUp'
 import { employeeDeatils } from './fixture/testData'
+import { user, pas} from '../tests/helper/env'
 
 
 test('Add Employee to the BrightHR portal', async ({ page }) => {
   await page.goto('/login');
-  await page.locator('#username').fill(process.env.user!);
-  await page.locator('#password').fill(process.env.pas!)
+  // await page.locator('#username').fill(process.env.user!);
+  // await page.locator('#password').fill(process.env.pas!)
+  await page.locator('#username').fill(user!);
+  await page.locator('#password').fill(pas!)
   await page.locator('button', { hasText: 'Login' }).click();
   await page.waitForURL('**/dashboard');
   await expect(page.locator('text="SB"')).toBeVisible();
