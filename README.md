@@ -1,0 +1,43 @@
+
+# 🧪 Playwright + TypeScript Automation Framework
+
+This project is a test automation framework built using:
+
+- [Playwright](https://playwright.dev/) for browser automation
+- [TypeScript](https://www.typescriptlang.org/) for type safety and cleaner code
+
+---
+
+## 📁 Project Structure
+
+```
+project-root/
+├── tests/                  # spec files test
+│   ├── fixture/            # Test data and functions
+│
+├── playwright.config.ts    # Playwright config
+├── package.json            # NPM scripts and dependencies
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Shiwani-droid/test-the-progress.git
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Tests
+
+```bash
+npx playwright test
+```
+
+> Add `--tags @yourtag` to filter tests by tag.
