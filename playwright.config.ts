@@ -7,7 +7,8 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
-require('dotenv').config()
+require('dotenv').config();
+console.log(process.env);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -15,7 +16,7 @@ require('dotenv').config()
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -31,7 +32,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless:false,
+    headless:true,
     // launchOptions: {
     //   args: ["--start-maximized"],
     // },

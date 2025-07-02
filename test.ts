@@ -1,2 +1,3 @@
 require('dotenv').config();
-console.log(process.env.username);
+console.log(process.env.user);
+console.log(process.env.pas);
