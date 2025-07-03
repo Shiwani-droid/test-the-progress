@@ -1,13 +1,16 @@
 import { expect, type Page } from '@playwright/test';
 
+//tear down process to delete the employees added by the test
 export async function deleteEmployees(page: Page, name: string): Promise<void> {
   await page.getByPlaceholder('Search employees...').click()
+  //Get the list of all empoyee
   const a = await page.locator('//ul[@role="list"]/li').allInnerTexts();
   const names = a.map(entry => {
     const lines = entry.split('\n');
     return lines[1]; // The second line contains the full name
   });
 
+  //Loop to find the name added by test and delete it
   if (names.find(emp => emp == name)) {
     await page.getByPlaceholder('Search employees...').fill(name);
     await page.getByTestId('typeAhead').getByText(name).waitFor({ state: 'visible' })

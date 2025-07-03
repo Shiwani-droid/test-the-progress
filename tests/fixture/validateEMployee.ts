@@ -1,8 +1,7 @@
 import { expect, type Page } from '@playwright/test';
 
+//function to validate employee added successfully
 export async function validateEmployees(page: Page, name: string): Promise<void> {
-    // const employeeLocator = page.locator(`//*[contains(text(),'${name}')]`);
-    // await expect(employeeLocator).toBeVisible();
     await page.getByPlaceholder('Search employees...').click()
     const a = await page.locator('//ul[@role="list"]/li').allInnerTexts();
     const names = a.map(entry => {

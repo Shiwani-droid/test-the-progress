@@ -1,7 +1,9 @@
+
 import * as dotenv from 'dotenv'
 
 //load env when not running in ci
 if(!process.env.CI){
+    //function load the env. variable from .env file
     dotenv.config();
 }
 
