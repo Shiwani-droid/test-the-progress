@@ -1,5 +1,5 @@
 
-# 🧪 Playwright + TypeScript Automation Framework
+# 🧪 Playwright + TypeScript Automation
 
 This project is a test automation framework built using:
 
