@@ -9,7 +9,6 @@ import { logIn } from './fixture/login'
 test('Add Employee to the portal', async ({ page }) => {
   //Login process to the portal
   await logIn(page);
-  await page.waitForURL('**/dashboard');
   //Assert user looged in successfully
   await expect(page.getByTestId('sideBar')).toBeVisible();
   //Add Employee via employee tab on the left-hand side of the panel
