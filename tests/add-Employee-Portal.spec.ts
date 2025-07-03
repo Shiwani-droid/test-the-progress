@@ -3,14 +3,12 @@ import { addEmployee } from './fixture/addEmployee'
 import { validateEmployees } from './fixture/validateEmployee'
 import { deleteEmployees } from './fixture/cleanUp'
 import { employeeDeatils } from './fixture/testData';
-import { user, pas } from '../tests/helper/env'
+import { logIn } from './fixture/login'
+
 
 test('Add Employee to the portal', async ({ page }) => {
   //Login process to the portal
-  await page.goto('/login');
-  await page.locator('#username').fill(user!);
-  await page.locator('#password').fill(pas!)
-  await page.locator('button', { hasText: 'Login' }).click();
+  await logIn(page);
   await page.waitForURL('**/dashboard');
   //Assert user looged in successfully
   await expect(page.getByTestId('sideBar')).toBeVisible();
