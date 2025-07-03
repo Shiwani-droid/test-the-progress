@@ -17,6 +17,6 @@ export async function addEmployee(page: Page, firstname: string, lastname: strin
   await page.locator('#jobTitle').fill(jobtitle);
   await page.locator('button', { hasText: 'Save new employee' }).click();
   //Validate employeed added successfully
-  await expect(page.locator('//h1[@class="text-lg text-white"]')).toHaveText('Success! New employee added')
+  await expect(page.locator('//h1[contains(text(),"Success! New employee added")]')).toBeVisible();
   await page.locator('//*[@class="w-7 fill-white"]').click();
 }
