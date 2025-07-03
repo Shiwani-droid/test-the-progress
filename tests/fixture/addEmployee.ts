@@ -13,7 +13,7 @@ export async function addEmployee(page: Page, firstname: string, lastname: strin
   await page.locator('//*[@data-testid="input-selector"]').scrollIntoViewIfNeeded()
   await page.locator('//*[@data-testid="input-selector"]').click();
   await page.locator('//*[@class="sc-caSCKo hpHtoP"]').click()
-  await page.locator('//*[text()="16"]').click();
+  await page.getByTestId('daypicker-panel').getByText('16').click();
   await page.locator('#jobTitle').fill(jobtitle);
   await page.locator('button', { hasText: 'Save new employee' }).click();
   //Validate employeed added successfully

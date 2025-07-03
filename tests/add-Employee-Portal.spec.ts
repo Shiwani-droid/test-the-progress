@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 import { addEmployee } from './fixture/addEmployee'
 import { validateEmployees } from './fixture/validateEmployee'
 import { deleteEmployees } from './fixture/cleanUp'
-import { employeeDeatils } from './fixture/testData'
+import { employeeDeatils } from './fixture/testData';
 import { user, pas } from '../tests/helper/env'
 
 test('Add Employee to the portal', async ({ page }) => {
@@ -13,7 +13,7 @@ test('Add Employee to the portal', async ({ page }) => {
   await page.locator('button', { hasText: 'Login' }).click();
   await page.waitForURL('**/dashboard');
   //Assert user looged in successfully
-  await expect(page.locator('text="SB"')).toBeVisible();
+  await expect(page.getByTestId('sideBar')).toBeVisible();
   //Add Employee via employee tab on the left-hand side of the panel
   await page.locator('//*[text()="Employees"]//parent::div[@title="Employees"]').click();
   await page.locator('button', { hasText: 'Add employee' }).click();

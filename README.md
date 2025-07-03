@@ -29,7 +29,7 @@ git clone https://github.com/Shiwani-droid/test-the-progress.git
 ```
 ### 3. Install Dependencies
 make sure .env file available with username and password at root level of project
-user `user` and `pas` and provide value
+use `user` and `pas` and provide value
 example: user=test@gmail.com
          pas=yourpasswordvalue
 
