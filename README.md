@@ -16,7 +16,7 @@ project-root/
 │   ├── fixture/            # Test data and functions
 │
 ├── playwright.config.ts    # Playwright config
-├── package.json            # NPM scripts and dependencies
+├── package.json            # NPM scripts and dependency
 └── README.md
 ```
 

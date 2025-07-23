@@ -8,5 +8,6 @@ export async function logIn(page: Page): Promise<void> {
       await page.locator('#username').fill(user!);
       await page.locator('#password').fill(pas!)
       await page.locator('button', { hasText: 'Login' }).click();
+      await page.waitForLoadState();
       await page.waitForURL('**/dashboard');
 }
